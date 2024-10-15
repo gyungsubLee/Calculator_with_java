@@ -1,4 +1,4 @@
-package calculator.Step1_2;
+package calculator.version1;
 
 public class Main {
     public static void main(String[] args) {
