@@ -3,7 +3,7 @@
 
 
 > ### 목차 
-> - [요구사항](#요구사항-)
+> - [요구사항](#요구사항)
 >- [버전 1 - if 문, switch 문](#버전-1)
 >- [버전 2 - 클래스 분리. 추상 클래스](#버전-2)
 >- [버전 3 - 인터페이스, 어댑터 패턴 적용](#버전-3)
@@ -68,10 +68,12 @@ public double calculate2(String operation, double a, double b) {
 <br/>
 
 
-## 버전2  - 클래스 분리 및 추상 클래스 상속
+## 버전 2
+
+> - 클래스 분리. 추상 클래스
 
 ### 클래스 다이어 그램
-![스크린샷 2024-10-15 오후 9.36.54.png](..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2F95%2Ft8symb5521g2916cz4qtrsjc0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_EnAi09%2F%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-10-15%20%EC%98%A4%ED%9B%84%209.36.54.png)
+![스크린샷 2024-10-15 오후 9.36.54.png](./img/version2.png)
 
 <br/>
 
@@ -113,11 +115,12 @@ public class DivideOperation extends AbstractOperation {
 <br/>
 <br/>
 
-## 버전 3 - 인터페이스, 어댑터 패턴 적용
+## 버전 3
+> - 인터페이스, 어댑터 패턴 적용
 
 ### 클래스 다이어 그램
 
-![스크린샷 2024-10-15 오후 9.48.17.png](..%2F..%2F..%2F..%2F..%2Fvar%2Ffolders%2F95%2Ft8symb5521g2916cz4qtrsjc0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_lAKqsb%2F%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202024-10-15%20%EC%98%A4%ED%9B%84%209.48.17.png)
+![스크린샷 2024-10-15 오후 9.48.17.png](./img/version3.png)
 
 <br/>
 
