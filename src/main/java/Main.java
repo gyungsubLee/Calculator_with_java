@@ -13,14 +13,48 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         Main main = new Main(new CalculatorImp());
 
-        System.out.println("Addition: " + calculator.calculate("+", 10, 20)); // 30
-        System.out.println("Subtraction: " + calculator.calculate("-", 20, 10)); // 10
-        System.out.println("Multiplication: " + calculator.calculate("*", 10, 20)); // 200
-        System.out.println("Division: " + calculator.calculate("/", 20, 10)); // 2
 
+        System.out.print("첫 번째 숫자를 입력하세요:");
+        double num1 = sc.nextInt();
+
+        System.out.print("두 번째 숫자를 입력하세요:");
+        double num2 = sc.nextInt();
+
+        System.out.print("사칙연산 기호를 입력하세요: ");
+        char operator = sc.next().charAt(0);
+
+        Boolean isCalculationRepeat = false;
+
+        double result = 0;
+
+        //
+        do {
+            if(!isCalculationRepeat) {
+                result = calculator.calculate(operator, num1, num2);
+            } else {
+                System.out.print("계산을 추가할 숫자를 입력하세요:");
+                double repeatNum = sc.nextInt();
+
+                System.out.print("추가 사칙연산 기호를 입력하세요: ");
+                char repeatOperator = sc.next().charAt(0);
+
+                double n = calculator.calculate(repeatOperator, result, repeatNum);
+                result = n;
+
+            }
+
+            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            String s = sc.next();
+
+            isCalculationRepeat = s.equals("exit")? false : true;
+
+        }  while(isCalculationRepeat);
+
+
+        System.out.println("결과 값 = " + result );
     }
 }
