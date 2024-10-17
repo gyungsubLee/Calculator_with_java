@@ -1,7 +1,7 @@
-package calculator.version3;
+package calculator.lv2;
 
 
-import calculator.version3.operation.*;
+import calculator.lv2.operation.*;
 
 import java.util.HashMap;
 import java.util.Map;

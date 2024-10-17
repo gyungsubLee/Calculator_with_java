@@ -1,4 +1,4 @@
-package calculator.version3.operation;
+package calculator.lv2.operation;
 
 public class MultiplyOperation implements Operation {
 

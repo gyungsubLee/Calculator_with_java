@@ -1,4 +1,4 @@
-package calculator.version3;
+package calculator.lv2;
 
 public interface Calculator {
 

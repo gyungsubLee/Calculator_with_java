@@ -1,4 +1,4 @@
-package calculator.version1;
+package calculator.lv1;
 
 public class Calculator {
 

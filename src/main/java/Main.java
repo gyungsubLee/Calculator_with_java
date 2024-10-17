@@ -1,9 +1,9 @@
 /* version 3 */
-import calculator.version3.Calculator;
-import calculator.version3.CalculatorImp;
-import calculator.version3.enums.InputEnum;
-import calculator.version3.repository.CalculationResultRepository;
-import calculator.version3.repository.CalculationResultRepositoryImp;
+import calculator.lv2.Calculator;
+import calculator.lv2.CalculatorImp;
+import calculator.lv2.enums.InputEnum;
+import calculator.lv2.repository.CalculationResultRepository;
+import calculator.lv2.repository.CalculationResultRepositoryImp;
 
 import java.util.Scanner;
 
