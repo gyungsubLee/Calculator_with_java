@@ -420,30 +420,17 @@ public enum InputEnum {
   <summary> 입력 로직 메서드 생성 </summary>
 
 - 동일한 로직이 중복되어서 메서드로 만듬
-- 근데 좋은 코드는 아닌 것 같음
+- ~~근데 좋은 코드는 아닌 것 같음~~ 
+- 가독성 좋게 아래와 같이 리펙토링함
 
  ```java
 public <T> T input(String message, Scanner sc, InputEnum type){
     System.out.print(message);
-    Object input = null;
-
-    switch (type){
-        case NUMBER :
-            if (sc.hasNextDouble()) {
-                input = sc.nextDouble();  // 소수점이 있는 숫자 또는 정수를 입력받음
-            } else {
-                System.out.println("잘못된 숫자 입력입니다.");
-                sc.next();  // 잘못된 입력 제거
-            }
-            break;
-        case OPERATOR:
-            input = sc.next().charAt(0);  // 연산자 입력
-            break;
-        case EXIT:
-            input = sc.next();  // 종료 문자열 입력
-            break;
-    }
-    return (T) input;
+    return switch (type){
+        case NUMBER -> (T) Double.valueOf(sc.nextDouble());
+        case OPERATOR -> (T)  Character.valueOf(sc.next().charAt(0));
+        case EXIT -> (T)  String.valueOf(sc.next());
+    };
 }
 ```   
 

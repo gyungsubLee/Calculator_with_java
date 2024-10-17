@@ -19,25 +19,11 @@ public class Main {
 
     public <T> T input(String message, Scanner sc, InputEnum type){
         System.out.print(message);
-        Object input = null;
-
-        switch (type){
-            case NUMBER :
-                if (sc.hasNextDouble()) {
-                    input = sc.nextDouble();  // 소수점이 있는 숫자 또는 정수를 입력받음
-                } else {
-                    System.out.println("잘못된 숫자 입력입니다.");
-                    sc.next();  // 잘못된 입력 제거
-                }
-                break;
-            case OPERATOR:
-                input = sc.next().charAt(0);  // 연산자 입력
-                break;
-            case EXIT:
-                input = sc.next();  // 종료 문자열 입력
-                break;
-        }
-        return (T) input;
+        return switch (type){
+            case NUMBER -> (T) Double.valueOf(sc.nextDouble());
+            case OPERATOR -> (T)  Character.valueOf(sc.next().charAt(0));
+            case EXIT -> (T)  String.valueOf(sc.next());
+        };
     }
 
     public static void main(String[] args) {
