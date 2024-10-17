@@ -369,7 +369,7 @@ public class CalculatorImp implements Calculator {
 
 <br/>
 
-### 생성자 주입, 입력값 캡슐화, 계산 반복 로직 리펙토링
+### 생성자 주입, ( 입력값, 계산 반복 ) 로직 리펙토링
 <details>
   <summary> DIP 준수 - 생성자 주입 </summary>
 
@@ -417,9 +417,9 @@ public enum InputEnum {
 </details>
 
 <details>
-  <summary> 입력 로직 캡슐화 </summary>
+  <summary> 입력 로직 메서드 생성 </summary>
 
-- 동일한 로직이 중복되어서 캡슐화 함
+- 동일한 로직이 중복되어서 메서드로 만듬
 - 근데 좋은 코드는 아닌 것 같음
 
  ```java
