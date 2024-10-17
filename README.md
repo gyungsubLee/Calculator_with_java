@@ -369,7 +369,38 @@ public class CalculatorImp implements Calculator {
 
 <br/>
 
-### 입력값 캡슐화 및 계산 반복 로직 리펙토링
+### 생성자 주입, 입력값 캡슐화, 계산 반복 로직 리펙토링
+<details>
+  <summary> DIP 준수 - 생성자 주입 </summary>
+
+> DIP: 의존성 역전 원칙, 고수준의 모듈은 저수준의 모듈에 의존해서는 안된다.
+- DIP 준수를 위해 interface로 의존성 형성 및 생성자 주입 사용
+
+
+ ```java
+public class Main {
+    
+}
+    private Calculator calculator;
+    private CalculationResultRepository repository;
+
+    // 생성자 주입
+    public Main(Calculator calculator, CalculationResultRepository repository) {
+        this.calculator = calculator;
+        this.repository = repository;
+    }
+
+
+    public static void main(String[] args) {
+        Main main = new Main(new CalculatorImp(), new CalculationResultRepositoryImp());
+        
+    .  .  .
+```   
+
+
+</details>
+
+
 <details>
   <summary>  [ enum ] InputEnum </summary>
 
