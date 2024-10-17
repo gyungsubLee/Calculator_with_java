@@ -25,10 +25,13 @@ public class CalculatorImp implements Calculator {
 
     @Override
     public double calculate(char operator, double a, double b){
+
         Operation mappingOperation = operationMappingAapter.get(operator);
+
         if (mappingOperation == null) {
             throw new UnsupportedOperationException("Unknown operation: " + operator);
         }
+
         return mappingOperation.calculate(a, b);
     }
 }
