@@ -1,6 +1,7 @@
 import calculator.lv2.Adapter.OperationHandler;
 import calculator.lv2.Calculator;
 import calculator.lv2.CalculatorImp;
+import calculator.lv2.Factory;
 import calculator.lv2.enums.InputEnum;
 import calculator.lv2.repository.CalculationNumberRepositoryImp;
 
@@ -43,7 +44,8 @@ public class App {
     public static void  main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Calculator calculator = new CalculatorImp(new OperationHandler(), new CalculationNumberRepositoryImp());
+        // Factory에서 의존성이 생성하여 가져옴
+        Calculator calculator = Factory.createCalculator();
 
         // 첫 번째 계산 수행
         double result = performCalculation(sc, calculator);
