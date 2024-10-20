@@ -1,4 +1,4 @@
-import calculator.lv2.Adapter.OperationAdapter;
+import calculator.lv2.Adapter.OperationHandler;
 import calculator.lv2.Calculator;
 import calculator.lv2.CalculatorImp;
 import calculator.lv2.enums.InputEnum;
@@ -26,7 +26,7 @@ public class App {
         return  calculator.calculate(operator, result, num2);
     }
 
-    // 추가 계산을 수행하는 메서드, 오버로딩 사용
+    // 추가 계산을 수행하는 메서드, 오버로딩
     public static double performCalculation(Scanner sc, Calculator calculator, double result) {
         double repeatNum = input("계산을 추가할 숫자를 입력하세요:", sc, InputEnum.NUMBER);
         char repeatOperator = input("추가 사칙연산 기호를 입력하세요: ", sc, InputEnum.OPERATOR);
@@ -40,12 +40,10 @@ public class App {
     }
 
 
-
-
     public static void  main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Calculator calculator = new CalculatorImp(new OperationAdapter(), new CalculationNumberRepositoryImp());
+        Calculator calculator = new CalculatorImp(new OperationHandler(), new CalculationNumberRepositoryImp());
 
         // 첫 번째 계산 수행
         double result = performCalculation(sc, calculator);
